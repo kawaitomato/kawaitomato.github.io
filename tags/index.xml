@@ -1,121 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Even - A super concise theme for Hugo</title>
-    <link>https://kawaitomato.github.io/tags/</link>
-    <description>Recent content in Tags on Even - A super concise theme for Hugo</description>
+    <title>Tags on Tomato&#39;s Blog</title>
+    <link>http://kawaitomato.github.io/tags/</link>
+    <description>Recent content in Tags on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Apr 2020 22:02:10 +0800</lastBuildDate>
     
-	<atom:link href="https://kawaitomato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kawaitomato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>preview</title>
-      <link>https://kawaitomato.github.io/tags/preview/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      <title>Hugo</title>
+      <link>http://kawaitomato.github.io/tags/hugo/</link>
+      <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/tags/preview/</guid>
+      <guid>http://kawaitomato.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tag-3</title>
-      <link>https://kawaitomato.github.io/tags/tag-3/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      <title>blog</title>
+      <link>http://kawaitomato.github.io/tags/blog/</link>
+      <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/tags/tag-3/</guid>
+      <guid>http://kawaitomato.github.io/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Theme preview</title>
-      <link>https://kawaitomato.github.io/tags/theme-preview/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      <title>node.js</title>
+      <link>http://kawaitomato.github.io/tags/node.js/</link>
+      <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/tags/theme-preview/</guid>
+      <guid>http://kawaitomato.github.io/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>English</title>
-      <link>https://kawaitomato.github.io/tags/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>test</title>
+      <link>http://kawaitomato.github.io/tags/test/</link>
+      <pubDate>Sat, 11 Apr 2020 19:06:16 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/tags/english/</guid>
+      <guid>http://kawaitomato.github.io/tags/test/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tag-2</title>
-      <link>https://kawaitomato.github.io/tags/tag-2/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>yarn</title>
+      <link>http://kawaitomato.github.io/tags/yarn/</link>
+      <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/tags/tag-2/</guid>
+      <guid>http://kawaitomato.github.io/tags/yarn/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tag-4</title>
-      <link>https://kawaitomato.github.io/tags/tag-4/</link>
-      <pubDate>Wed, 30 Aug 2017 01:53:34 +0800</pubDate>
+      <title>流水账</title>
+      <link>http://kawaitomato.github.io/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/</link>
+      <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/tags/tag-4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日本語</title>
-      <link>https://kawaitomato.github.io/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/</link>
-      <pubDate>Wed, 30 Aug 2017 01:53:34 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-1</title>
-      <link>https://kawaitomato.github.io/tags/tag-1/</link>
-      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/tags/tag-1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>中文</title>
-      <link>https://kawaitomato.github.io/tags/%E4%B8%AD%E6%96%87/</link>
-      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/tags/%E4%B8%AD%E6%96%87/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shortcodes</title>
-      <link>https://kawaitomato.github.io/tags/shortcodes/</link>
-      <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://kawaitomato.github.io/tags/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/tags/syntax-highlighting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-5</title>
-      <link>https://kawaitomato.github.io/tags/tag-5/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/tags/tag-5/</guid>
+      <guid>http://kawaitomato.github.io/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/</guid>
       <description></description>
     </item>
     
