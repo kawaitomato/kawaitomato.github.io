@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>博客搭建历程记录 - Tomato&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="kawaitomato" /><meta name="description" content="摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近" /><meta name="keywords" content="Hugo, blog, kawaitomato" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.a93a5721.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="博客搭建历程记录" />
+<meta property="og:description" content="摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/" />
+<meta property="article:published_time" content="2020-04-12T22:02:10&#43;08:00"/>
+<meta property="article:modified_time" content="2020-04-12T22:02:10&#43;08:00"/>
+
+<meta itemprop="name" content="博客搭建历程记录">
+<meta itemprop="description" content="摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近">
+
+
+<meta itemprop="datePublished" content="2020-04-12T22:02:10&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-12T22:02:10&#43;08:00" />
+<meta itemprop="wordCount" content="1302">
+
+
+
+<meta itemprop="keywords" content="blog,Hugo,node.js,yarn,流水账," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="博客搭建历程记录"/>
+<meta name="twitter:description" content="摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">kawAitomAto</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">时间线</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于本站</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">kawAitomAto</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">时间线</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于本站</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">博客搭建历程记录</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+          <span class="more-meta"> 约 1302 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#摘要">摘要</a></li>
+<li><a href="#平台以及generator的选择">平台以及generator的选择</a></li>
+<li><a href="#hugo的搭建过程">Hugo的搭建过程</a>
+<ul>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#下载模板">下载模板</a></li>
+<li><a href="#调成参数并测试">调成参数并测试</a></li>
+<li><a href="#修改配色方案">修改配色方案</a></li>
+<li><a href="#静态网站的生成">静态网站的生成</a></li>
+</ul></li>
+<li><a href="#总结">总结</a></li>
+<li><a href="#参考文档">参考文档</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="摘要">摘要</h1>
+
+<p>第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑</p>
+
+<h1 id="平台以及generator的选择">平台以及generator的选择</h1>
+
+<p>其实一开始没准备自己搭，就是想记录一下最近学习日语罗马字的一些内容，准备在csdn写一写就算了（还能赚点积分）。最后想一想反正要搞不如自己搞一个，也不会受什么限制。本来自己也有服务器和域名，准备搞个wordpress的，但又不知道会不会不稳定，也比较麻烦以及说不定会有些其他问题，就想到了github.io，看了看知乎用的还挺多人用的就确定下了。</p>
+
+<p>GitHub推荐的generator是Jekyll，一开始也整了挺长时间的换了好几个模板都不太满意，最后看到现在的模板挺好，下载以后才发现是Hugo的，就换到了Hugo上，而相比之下Hugo确实有不少优点。最明显的就是Hugo只需要一个二进制文件，而不像Jekyll是基于Ruby的，配置起来比较方便，而且国内用Ruby还需要用<a href="https://gems.ruby-china.com/">镜像</a>。一开始配置的时候还遇到了一个兼容性的问题，装的是2.7.1的版本，用模板的时候提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Error installing rails: nokogiri requires Ruby version &lt; 2.7.dev, &gt;= 2.3.</pre></td></tr></table>
+</div>
+</div>
+<p><del>因为没经验习惯性地查了查</del>于是换到了2.6版本的Ruby就ok了。</p>
+
+<h1 id="hugo的搭建过程">Hugo的搭建过程</h1>
+
+<h2 id="初始化">初始化</h2>
+
+<p>首先是下载二进制文件，然后添加到环境变量<code>PATH</code>。我把一些零散的二进制文件都放到了<code>~/apps</code>里面，就不用每次都加环境变量了。By the way，我的<code>PATH</code>之前就爆了，新建了一个<code>PATH_KAWAI</code>来存，并且在<code>PATH</code>里面置顶了<code>PATH_KAWAI</code>
+<img src="/img/blog/批注 2020-04-13 122610.png" alt="fig 1" /></p>
+
+<h2 id="下载模板">下载模板</h2>
+
+<p>然后是下载模板。考虑到国内的网络状况，我没有通过<code>git clone</code>，而是直接从GitHub网页下载的。虽然以后不能<code>git pull</code>来更新，但看了下模板最后的更新日期是2018年也就无所谓了。</p>
+
+<h2 id="调成参数并测试">调成参数并测试</h2>
+
+<p>然后就是用Hugo新建网站</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo new site blogsite    </pre></td></tr></table>
+</div>
+</div>
+<p>拷贝模板</p>
+
+<p>新建post</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo new post/hello-world.md    </pre></td></tr></table>
+</div>
+</div>
+<p>编辑内容</p>
+
+<p>调整<code>config.toml</code>的各种参数（因为我下的模板有部分中文注释所以非常容易）</p>
+
+<p>最后运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo server</pre></td></tr></table>
+</div>
+</div>
+<p>就出现了一个问题，主页上不显示文章，而是显示名为Posts的目录。
+<img src="/img/blog/批注 2020-04-13 142823.png" alt="fig2" />
+一开始我尝试调各种参数也没有用，在bing上也搜索不到，最后Google搜到一篇文章说Hugo要用0.54版。确实，换了以后就好了，好气啊(╯‵□′)╯︵┻━┻<del>善用搜索引擎的重要性</del>
+<a href="批注 2020-04-13 143614.png">fig3</a></p>
+
+<h2 id="修改配色方案">修改配色方案</h2>
+
+<p>按照模板的说明，在主题目录下的<code>/src/css/_variable.scss</code>里修改配色方案为Mint Green，然后依次执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">yarn install
+yarn build</pre></td></tr></table>
+</div>
+</div>
+<p>需要安装yarn和Node.js，因为之前想编译Hyper这个第三方terminal的时候都安装过直接都可以用，就是npm遇到了一点小问题，准备单独开一篇记一下。</p>
+
+<h2 id="静态网站的生成">静态网站的生成</h2>
+
+<p>在站点根目录执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo</pre></td></tr></table>
+</div>
+</div>
+<p>即可，最后我在GitHub客户端里直接push上去就完成啦</p>
+
+<h1 id="总结">总结</h1>
+
+<p>总体上Hugo的使用还是非常容易的，只要在<code>config.toml</code>里配置好包括theme、baseURL等在内的各种参数，用到的命令都会非常好记（<code>hugo</code> <code>hugo server</code> <code>hugo new *.md</code> <code>hugo new site *</code>)而不用加什么参数。</p>
+
+<p>以上</p>
+
+<h1 id="参考文档">参考文档</h1>
+
+<p><a href="https://www.zhihu.com/question/20962496/answer/677815713">如何在 GitHub 上写博客？ - 少数派的回答 - 知乎</a><br />
+<a href="https://blog.csdn.net/jinshelj/article/details/80193021">此环境变量太大, 此对话框允许将值设置为最长2047个字符</a><br />
+<a href="https://networm.me/2019/03/17/switch-to-hugo-theme-even/#hugo">切换到 Hugo 主题 Even</a><br />
+<a href="https://www.gohugo.org/">Hugo中文文档</a><br />
+<a href="www.rectcircle.cn/posts/blog-migration/">博客迁移——Hugo使用整体概览</a><br />
+<a href="https://github.com/olOwOlo/hugo-theme-even">hugo-theme-even</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">kawaitomato</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-04-12</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC 4.0</span>
+  </p>
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/path/to/your/wechat-qr-code.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/path/to/your/alipay-qr-code.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blog/">blog</a>
+          <a href="/tags/hugo/">Hugo</a>
+          <a href="/tags/node.js/">node.js</a>
+          <a href="/tags/yarn/">yarn</a>
+          <a href="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/">流水账</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hogo自动生成title</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/hwllo-world/">
+            <span class="next-text nav-default">Hwllo World</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kawaitomato@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/shz498471840" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/kawaitomato" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/p/1005052120604092" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/6403002" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://kawaitomato.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">kawaitomato</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
