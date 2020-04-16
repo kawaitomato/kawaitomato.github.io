@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技术 on Tomato&#39;s Blog</title>
-    <link>http://kawaitomato.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <link>https://www.kawaitomato.xyz/categories/%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in 技术 on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Apr 2020 17:04:13 +0800</lastBuildDate>
     
-	<atom:link href="http://kawaitomato.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.kawaitomato.xyz/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hogo自动生成title</title>
-      <link>http://kawaitomato.github.io/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</link>
+      <link>https://www.kawaitomato.xyz/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</link>
       <pubDate>Mon, 13 Apr 2020 17:04:13 +0800</pubDate>
       
-      <guid>http://kawaitomato.github.io/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</guid>
+      <guid>https://www.kawaitomato.xyz/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</guid>
       <description>正文 substr 在default模板里，title也是自动生成的 1 title: &amp;#34;{{ replace .TranslationBaseName &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}&amp;#34; 不过我希望能更自动一点。参照Jekyll的命名方式，我的md文件</description>
     </item>
     
     <item>
       <title>博客搭建历程记录</title>
-      <link>http://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.kawaitomato.xyz/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>http://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.kawaitomato.xyz/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
       <description>摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近</description>
     </item>
     
