@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tomato&#39;s Blog</title>
-    <link>https://www.kawaitomato.xyz/</link>
+    <link>https://kawaitomato.github.io/</link>
     <description>Recent content on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 12 Apr 2020 11:18:05 +0800</lastBuildDate>
     
-	<atom:link href="https://www.kawaitomato.xyz/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kawaitomato.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>关于本站</title>
-      <link>https://www.kawaitomato.xyz/about/</link>
+      <link>https://kawaitomato.github.io/about/</link>
       <pubDate>Sun, 12 Apr 2020 11:18:05 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/about/</guid>
-      <description>非技术向个人博客 页面内容由https://gohugo.io/生成，主题使用https://github.com/olOwOlo/hugo-</description>
+      <guid>https://kawaitomato.github.io/about/</guid>
+      <description>非技术向个人博客</description>
     </item>
     
     <item>
       <title>为Nginx配置SSL</title>
-      <link>https://www.kawaitomato.xyz/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</link>
+      <link>https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</link>
       <pubDate>Thu, 16 Apr 2020 17:55:16 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</guid>
+      <guid>https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</guid>
       <description>前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl</description>
     </item>
     
     <item>
       <title>Hogo自动生成title</title>
-      <link>https://www.kawaitomato.xyz/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</link>
+      <link>https://kawaitomato.github.io/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</link>
       <pubDate>Mon, 13 Apr 2020 17:04:13 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</guid>
+      <guid>https://kawaitomato.github.io/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/</guid>
       <description>正文 substr 在default模板里，title也是自动生成的 1 title: &amp;#34;{{ replace .TranslationBaseName &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}&amp;#34; 不过我希望能更自动一点。参照Jekyll的命名方式，我的md文件</description>
     </item>
     
     <item>
       <title>博客搭建历程记录</title>
-      <link>https://www.kawaitomato.xyz/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <link>https://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
       <description>摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近</description>
     </item>
     
     <item>
       <title>Hwllo World</title>
-      <link>https://www.kawaitomato.xyz/post/hwllo-world/</link>
+      <link>https://kawaitomato.github.io/post/hwllo-world/</link>
       <pubDate>Sat, 11 Apr 2020 19:06:16 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/post/hwllo-world/</guid>
+      <guid>https://kawaitomato.github.io/post/hwllo-world/</guid>
       <description>Hello World! 世界，你好！ こんにちは！</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>test on Tomato&#39;s Blog</title>
-    <link>https://www.kawaitomato.xyz/tags/test/</link>
+    <link>https://kawaitomato.github.io/tags/test/</link>
     <description>Recent content in test on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Apr 2020 19:06:16 +0800</lastBuildDate>
     
-	<atom:link href="https://www.kawaitomato.xyz/tags/test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kawaitomato.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hwllo World</title>
-      <link>https://www.kawaitomato.xyz/post/hwllo-world/</link>
+      <link>https://kawaitomato.github.io/post/hwllo-world/</link>
       <pubDate>Sat, 11 Apr 2020 19:06:16 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/post/hwllo-world/</guid>
+      <guid>https://kawaitomato.github.io/post/hwllo-world/</guid>
       <description>Hello World! 世界，你好！ こんにちは！</description>
     </item>
     

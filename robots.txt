@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://www.kawaitomato.xyz/sitemap.xml
+Sitemap: https://kawaitomato.github.io/sitemap.xml

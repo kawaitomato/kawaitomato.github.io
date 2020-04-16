@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vps on Tomato&#39;s Blog</title>
+    <link>https://kawaitomato.github.io/tags/vps/</link>
+    <description>Recent content in vps on Tomato&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Apr 2020 17:55:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://kawaitomato.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为Nginx配置SSL</title>
+      <link>https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</link>
+      <pubDate>Thu, 16 Apr 2020 17:55:16 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</guid>
+      <description>前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl</description>
+    </item>
+    
+  </channel>
+</rss>

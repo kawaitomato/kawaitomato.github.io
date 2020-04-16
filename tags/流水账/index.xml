@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>流水账 on Tomato&#39;s Blog</title>
-    <link>https://www.kawaitomato.xyz/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/</link>
+    <link>https://kawaitomato.github.io/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/</link>
     <description>Recent content in 流水账 on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 12 Apr 2020 22:02:10 +0800</lastBuildDate>
     
-	<atom:link href="https://www.kawaitomato.xyz/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kawaitomato.github.io/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>博客搭建历程记录</title>
-      <link>https://www.kawaitomato.xyz/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
+      <link>https://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 12 Apr 2020 22:02:10 +0800</pubDate>
       
-      <guid>https://www.kawaitomato.xyz/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://kawaitomato.github.io/post/2020-04-12-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B%E8%AE%B0%E5%BD%95/</guid>
       <description>摘要 第一次尝试搭建个人博客，记录一下搭建的过程以及其中遇到的一些坑 平台以及generator的选择 其实一开始没准备自己搭，就是想记录一下最近</description>
     </item>
     
