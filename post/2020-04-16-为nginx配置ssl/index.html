@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>为nginx配置ssl - Tomato&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="kawaitomato" /><meta name="description" content="前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl" /><meta name="keywords" content="Hugo, blog, kawaitomato" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://www.kawaitomato.xyz/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.a93a5721.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="为nginx配置ssl" />
+<meta property="og:description" content="前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.kawaitomato.xyz/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/" />
+<meta property="article:published_time" content="2020-04-16T17:55:16&#43;08:00"/>
+<meta property="article:modified_time" content="2020-04-16T17:55:16&#43;08:00"/>
+
+<meta itemprop="name" content="为nginx配置ssl">
+<meta itemprop="description" content="前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl">
+
+
+<meta itemprop="datePublished" content="2020-04-16T17:55:16&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-16T17:55:16&#43;08:00" />
+<meta itemprop="wordCount" content="1152">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为nginx配置ssl"/>
+<meta name="twitter:description" content="前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">kawAitomAto</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">时间线</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于本站</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">kawAitomAto</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">时间线</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于本站</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">为nginx配置ssl</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-16 </span>
+        
+          <span class="more-meta"> 约 1152 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+	  
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#正文">正文</a>
+<ul>
+<li><a href="#安装acme-sh">安装acme.sh</a></li>
+<li><a href="#安装nginx">安装nginx</a></li>
+<li><a href="#申请证书">申请证书</a></li>
+<li><a href="#安装证书">安装证书</a></li>
+<li><a href="#nginx配置">nginx配置 ##</a></li>
+<li><a href="#启动与验证">启动与验证</a></li>
+<li><a href="#参考资料">参考资料</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="前言">前言</h1>
+
+<p>想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现我自己的网站ssl之前配置有点问题，只支持到一级域名。于是重新整了一遍，大致记录一下过程吧。</p>
+
+<p>注：以下操作都是在root用户下完成的</p>
+
+<h1 id="正文">正文</h1>
+
+<p>之前在配置ssl的时候，只是为了v2ray的加密，并没有自己跑一个网站，于是只对一级域名有效。现在会用到二级域名了，就换成新的参数更新了一次，过程还是比较容易的</p>
+
+<h2 id="安装acme-sh">安装acme.sh</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">curl https://get.acme.sh | sh</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>如果安装报错，那么可能是因为系统缺少 acme.sh 所需要的依赖项，acme.sh 的依赖项主要是 socat，我们通过以下命令来安装这些依赖项，然后重新安装一遍 acme.sh:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo apt-get install openssl cron socat curl</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<h2 id="安装nginx">安装nginx</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dnf install nginx</pre></td></tr></table>
+</div>
+</div>
+<p>我用的是Fedora 31系统，不需要添加repo，而CentOS7我记得默认的repo里是没有nginx的。另外编译安装的话可以根据自己的需要开关功能，具体方法参照nginx的官方说明</p>
+
+<h2 id="申请证书">申请证书</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">export CF_Key=&#34;sdfsdfsdfljlbjkljlkjsdfoiwje&#34;
+export CF_Email=&#34;xxxx@sss.com&#34;
+acme.sh --issue --dns dns_cf -d *.mydomain.com -d mydomain.com --keylength ec-256 --force -w /usr/share/nginx/html</pre></td></tr></table>
+</div>
+</div>
+<p>因为需要使用泛域名，就要用到DNS服务器解析。之前为了配置CDN把我的DNS解析放在了cloudflare上，于是在cloudflare的个人配置<a href="https://dash.cloudflare.com/profile">API KEY</a>页面就可以查到自己的API。这里我用是的是global API，安全性相对较差，但配置方便一些。</p>
+
+<p>第一行的&rdquo;sdfsdfsdfljlbjkljlkjsdfoiwje&rdquo;替换为自己DNS API，第二行的Email同理。第三行的*.mydomain.com和mydomain.com均替换为自己的域名。-w 后面的是自己网站的根目录，与nginx配置文件中的根目录保持一致（后面会讲到）。</p>
+
+<p>如果DNS不是配置在cloudflare上的，或者希望用令牌（token）而不是全局API的，可以参考<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi">acme的官方说明</a></p>
+
+<h2 id="安装证书">安装证书</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">acme.sh --install-cert -d *.mydomain.com --ecc \
+        --key-file       /etc/nginx/ssl/nginx.key \
+        --fullchain-file /etc/nginx/ssl/nginx.crt \
+        --reloadcmd     &#34;service nginx force-reload&#34;
+openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048</pre></td></tr></table>
+</div>
+</div>
+<p>这里我统一将证书安装在了<code>/etc/nginx/ssl/</code>目录内，并利用openssl产生dhparam文件用于密钥交换</p>
+
+<h2 id="nginx配置">nginx配置 ##</h2>
+
+<p>首先打开配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vim /etc/nginx/nginx.conf</pre></td></tr></table>
+</div>
+</div>
+<p>前略
+    server {
+        listen       443 ssl http2;
+        listen       [::]:443 ssl http2;
+        ssl on;
+        ssl_certificate /etc/nginx/ssl/nginx.crt;
+        ssl_certificate_key /etc/nginx/ssl/nginx.key;
+        ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+        ssl_session_timeout 1d;
+        ssl_session_cache shared:MozSSL:10m;
+        ssl_session_tickets off;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+
+    server_name  medomain.com;
+    root         /usr/share/nginx/html;
+
+    # Load configuration files for the default server block.
+    include /etc/nginx/default.d/*.conf;
+
+    gzip on;
+
+    error_page 404 /404.html;
+        location = /40x.html {
+     }
+
+    error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+    }
+}</pre></td></tr></table>
+</div>
+</div>
+<p>后略</p>
+
+<p>这样就完成了nginx的配置（同样记得替换mydomain.com为自己的域名）</p>
+
+<h2 id="启动与验证">启动与验证</h2>
+
+<p>激活并立即运行nginx</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">systemctl enable --now nginx</pre></td></tr></table>
+</div>
+</div>
+<p>这时候已经完成了所有的配置。如果需要检验自己的ssl配置是否正确，可以在<a href="https://www.ssllabs.com/ssltest/index.html">Qualys SSL Labs&rsquo;s SSL Server Test</a>输入自己的域名进行检查，如果结果是A的话就是安全的啦
+<img src="/img/blog/批注 2020-04-16 210919.png" alt="fig 1" /></p>
+
+<h2 id="参考资料">参考资料</h2>
+
+<p><a href="https://guide.v2fly.org/advanced/tls.html">新 V2Ray 白话文指南/TLS（需科学上网）</a><br />
+<a href="https://www.jianshu.com/p/dbe180979e77">acme.sh 配合 letsencrypt 配置泛域名</a>
+<a href="https://www.cnblogs.com/f-ck-need-u/p/7103791.html">openssl dhparam(密钥交换)</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">kawaitomato</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-04-16</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC 4.0</span>
+  </p>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/">
+            <span class="next-text nav-default">Hogo自动生成title</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+	  
+  <!-- begin comments //-->
+    <section id="isso-thread">
+    
+    </section>
+  <!-- end comments //-->
+
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+  <!-- begin comments //-->
+    <section id="isso-thread">
+    111
+    </section>
+  <!-- end comments //-->
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kawaitomato@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/shz498471840" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/kawaitomato" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/p/1005052120604092" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/6403002" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://www.kawaitomato.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a> 
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">kawaitomato</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
