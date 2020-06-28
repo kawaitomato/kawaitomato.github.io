@@ -6,17 +6,26 @@
     <description>Recent content in 说说 on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 17 Apr 2020 00:19:45 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 18:19:07 +0800</lastBuildDate>
     
 	<atom:link href="https://kawaitomato.github.io/categories/%E8%AF%B4%E8%AF%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说</title>
-      <link>https://kawaitomato.github.io/post/2020-04-17-%E8%AF%B4%E8%AF%B4/</link>
+      <link>https://kawaitomato.github.io/post/2020-04-17-%E8%AF%B4%E8%AF%B4b/</link>
+      <pubDate>Fri, 17 Apr 2020 18:19:07 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/post/2020-04-17-%E8%AF%B4%E8%AF%B4b/</guid>
+      <description>从头开始学hugo，这工程量有点大。先把一开始想写的罗马字转写写了吧，也是一种不忘初心（</description>
+    </item>
+    
+    <item>
+      <title>说说</title>
+      <link>https://kawaitomato.github.io/post/2020-04-17-%E8%AF%B4%E8%AF%B4a/</link>
       <pubDate>Fri, 17 Apr 2020 00:19:45 +0800</pubDate>
       
-      <guid>https://kawaitomato.github.io/post/2020-04-17-%E8%AF%B4%E8%AF%B4/</guid>
+      <guid>https://kawaitomato.github.io/post/2020-04-17-%E8%AF%B4%E8%AF%B4a/</guid>
       <description>感觉我在把这个模板研究透彻之前是不可能加上Isso评论了😪</description>
     </item>
     

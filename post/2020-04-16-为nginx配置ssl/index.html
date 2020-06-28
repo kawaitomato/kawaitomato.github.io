@@ -43,15 +43,15 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/" />
 <meta property="article:published_time" content="2020-04-16T17:55:16&#43;08:00"/>
-<meta property="article:modified_time" content="2020-04-16T17:55:16&#43;08:00"/>
+<meta property="article:modified_time" content="2020-04-26T18:40:16&#43;08:00"/>
 
 <meta itemprop="name" content="为Nginx配置SSL">
 <meta itemprop="description" content="前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现自己网站之前的SS">
 
 
 <meta itemprop="datePublished" content="2020-04-16T17:55:16&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-16T17:55:16&#43;08:00" />
-<meta itemprop="wordCount" content="1161">
+<meta itemprop="dateModified" content="2020-04-26T18:40:16&#43;08:00" />
+<meta itemprop="wordCount" content="1137">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"> 计算机 </a>
             </div>
-          <span class="more-meta"> 约 1161 字 </span>
+          <span class="more-meta"> 约 1137 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -148,6 +148,7 @@
 <ul>
 <li><a href="#安装acme-sh">安装acme.sh</a></li>
 <li><a href="#安装nginx">安装Nginx</a></li>
+<li><a href="#打开防火墙服务">打开防火墙服务</a></li>
 <li><a href="#申请证书">申请证书</a></li>
 <li><a href="#安装证书">安装证书</a></li>
 <li><a href="#nginx配置">Nginx配置</a></li>
@@ -172,6 +173,17 @@
 <p>以前虽然配置过SSL，但也只是为了v2ray的加密，并没有自己跑一个网站，于是只设置了一级域名。现在会用到二级域名了，就换成了新的参数，过程还是比较容易的</p>
 
 <h2 id="安装acme-sh">安装acme.sh</h2>
+
+<p>安装依赖（Fedora31只缺少cronie）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dnf install cronie</pre></td></tr></table>
+</div>
+</div>
+<p>下载脚本并安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -180,17 +192,15 @@
 <pre class="chroma">curl https://get.acme.sh | sh</pre></td></tr></table>
 </div>
 </div>
-<blockquote>
-<p>如果安装报错，那么可能是因为系统缺少 acme.sh 所需要的依赖项，acme.sh 的依赖项主要是 socat，我们通过以下命令来安装这些依赖项，然后重新安装一遍 acme.sh:</p>
+<p>别名</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ sudo apt-get install openssl cron socat curl</pre></td></tr></table>
+<pre class="chroma">alias acme.sh=~/.acme.sh/acme.sh</pre></td></tr></table>
 </div>
-</div></blockquote>
-
+</div>
 <h2 id="安装nginx">安装Nginx</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -202,6 +212,19 @@
 </div>
 <p>我用的是Fedora 31系统，不需要添加repo，而CentOS 7我记得默认的repo里是没有Nginx的。另外编译安装的话可以根据自己的需要开关功能，具体方法参照Nginx的官方说明</p>
 
+<h2 id="打开防火墙服务">打开防火墙服务</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">firewall-cmd --add-service=http --permanent
+firewall-cmd --add-service=https --permanent
+firewall-cmd --reload</pre></td></tr></table>
+</div>
+</div>
 <h2 id="申请证书">申请证书</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -212,7 +235,7 @@
 <td class="lntd">
 <pre class="chroma">export CF_Key=&#34;sdfsdfsdfljlbjkljlkjsdfoiwje&#34;
 export CF_Email=&#34;xxxx@sss.com&#34;
-acme.sh --issue --dns dns_cf -d *.mydomain.com -d mydomain.com --keylength ec-256 --force -w /usr/share/nginx/html</pre></td></tr></table>
+acme.sh  --issue  -d mydomain.com  --dns dns_cf -d *.mydomain.com  --keylength ec-256 --force</pre></td></tr></table>
 </div>
 </div>
 <p>因为需要使用泛域名，就要用到DNS服务器解析。之前为了配置CDN把我的DNS解析放在了cloudflare上，于是在cloudflare的个人配置<a href="https://dash.cloudflare.com/profile">API KEY</a>页面就可以查到自己的API。这里我用是的是global API，安全性相对较差，但配置方便一些。</p>
@@ -229,9 +252,11 @@ acme.sh --issue --dns dns_cf -d *.mydomain.com -d mydomain.com --keylength ec-25
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">acme.sh --install-cert -d *.mydomain.com --ecc \
+<pre class="chroma">mkdir /etc/nginx/ssl
+acme.sh --install-cert -d mydomain.com --ecc \
         --key-file       /etc/nginx/ssl/nginx.key \
         --fullchain-file /etc/nginx/ssl/nginx.crt \
         --reloadcmd     &#34;service nginx force-reload&#34;
@@ -290,7 +315,8 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048</pre></td></tr></table>
 <pre class="chroma">server {
     listen       443 ssl http2;
     listen       [::]:443 ssl http2;
-    ssl on;
+    server_name  mydomain.com www.mydomain.com *.mydomain.com;
+
     ssl_certificate /etc/nginx/ssl/nginx.crt;
     ssl_certificate_key /etc/nginx/ssl/nginx.key;
     ssl_dhparam /etc/nginx/ssl/dhparam.pem;
@@ -302,7 +328,6 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048</pre></td></tr></table>
     ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
     ssl_prefer_server_ciphers off;
 
-    server_name  medomain.com;
     root         /usr/share/nginx/html;
 
     # Load configuration files for the default server block.
@@ -353,12 +378,12 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048</pre></td></tr></table>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-04-16</span>
+    <span class="item-content">2020-04-26</span>
   </p>
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content">CC BY-NC 4.0</span>
+    <span class="item-content"><a rel="license noopener" href="creativecommons.org/licenses/by-nc/4.0" target="_blank">CC BY-NC 4.0</a></span>
   </p>
 </div><footer class="post-footer">
       <div class="post-tags">
@@ -368,9 +393,9 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048</pre></td></tr></table>
           <a href="/tags/vps/">vps</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/2020-04-17-%E8%AF%B4%E8%AF%B4/">
+        <a class="prev" href="/post/2020-06-28-%E6%B3%95%E8%B0%9A%E6%95%B4%E7%90%86/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">说说</span>
+            <span class="prev-text nav-default">法谚整理</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         <a class="next" href="/post/2020-04-13-yaml%E6%A0%BC%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90title/">
@@ -392,7 +417,6 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048</pre></td></tr></table>
       <a href="mailto:kawaitomato@outlook.com" class="iconfont icon-email" title="email"></a>
       <a href="https://twitter.com/shz498471840" class="iconfont icon-twitter" title="twitter"></a>
       <a href="https://github.com/kawaitomato" class="iconfont icon-github" title="github"></a>
-      <a href="https://weibo.com/p/1005052120604092" class="iconfont icon-weibo" title="weibo"></a>
       <a href="https://space.bilibili.com/6403002" class="iconfont icon-bilibili" title="bilibili"></a>
   <a href="https://kawaitomato.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
