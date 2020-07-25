@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vps on Tomato&#39;s Blog</title>
-    <link>https://kawaitomato.github.io/tags/vps/</link>
-    <description>Recent content in vps on Tomato&#39;s Blog</description>
+    <title>升级 on Tomato&#39;s Blog</title>
+    <link>https://kawaitomato.github.io/tags/%E5%8D%87%E7%BA%A7/</link>
+    <description>Recent content in 升级 on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 25 Jul 2020 23:18:08 +0800</lastBuildDate>
     
-	<atom:link href="https://kawaitomato.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kawaitomato.github.io/tags/%E5%8D%87%E7%BA%A7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://kawaitomato.github.io/post/2020-07-25-fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7/</guid>
       <description>前言 看到Fedora出了33，不禁有些手痒，开服务器时装的Fedora 31已经很久没有更新了，查了一下升级方法，看起来还挺容易就升了。参考文</description>
-    </item>
-    
-    <item>
-      <title>为Nginx配置SSL</title>
-      <link>https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</link>
-      <pubDate>Thu, 16 Apr 2020 17:55:16 +0800</pubDate>
-      
-      <guid>https://kawaitomato.github.io/post/2020-04-16-%E4%B8%BAnginx%E9%85%8D%E7%BD%AEssl/</guid>
-      <description>前言 想给博客配置个评论系统，看了一圈要么是国内的，要么是被墙的，纠结一番以后决定自己搭一个。于是整了两天还没正好，倒是发现自己网站之前的SS</description>
     </item>
     
   </channel>

@@ -6,10 +6,19 @@
     <description>Recent content in 计算机 on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Apr 2020 17:55:16 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2020 23:18:08 +0800</lastBuildDate>
     
 	<atom:link href="https://kawaitomato.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fedora系统升级</title>
+      <link>https://kawaitomato.github.io/post/2020-07-25-fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Sat, 25 Jul 2020 23:18:08 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/post/2020-07-25-fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7/</guid>
+      <description>前言 看到Fedora出了33，不禁有些手痒，开服务器时装的Fedora 31已经很久没有更新了，查了一下升级方法，看起来还挺容易就升了。参考文</description>
+    </item>
     
     <item>
       <title>为Nginx配置SSL</title>
