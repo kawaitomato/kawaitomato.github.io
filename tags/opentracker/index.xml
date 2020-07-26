@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opentracker on Tomato&#39;s Blog</title>
+    <link>https://kawaitomato.github.io/tags/opentracker/</link>
+    <description>Recent content in Opentracker on Tomato&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 26 Jul 2020 15:10:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://kawaitomato.github.io/tags/opentracker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Opentracker服务器的搭建</title>
+      <link>https://kawaitomato.github.io/post/2020-07-26-opentracker%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Sun, 26 Jul 2020 15:10:39 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/post/2020-07-26-opentracker%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <description>前言 受RMS感召，准备投奔自由软件，有一个不太好解决的问题是如何在自己的不同设备之间传文件，以及如何与别人传文件。没有找到太好的方案，于是准</description>
+    </item>
+    
+  </channel>
+</rss>
