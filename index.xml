@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>screen的使用</title>
+      <link>https://kawaitomato.github.io/post/2020-07-29-screen%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 29 Jul 2020 12:23:51 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/post/2020-07-29-screen%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>前言 可能是网络线路问题，ssh总是会中断。最近想编译一下MariaDB（系统升到了Fedora 33以后发现还没被MySQL支持，悲），要挺长</description>
+    </item>
+    
+    <item>
       <title>Opentracker服务器的搭建</title>
       <link>https://kawaitomato.github.io/post/2020-07-26-opentracker%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Sun, 26 Jul 2020 15:10:39 +0800</pubDate>
