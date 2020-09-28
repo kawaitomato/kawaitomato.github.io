@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>基于CalDAV与CardDAV协议的Radicale服务搭建</title>
+      <link>https://kawaitomato.github.io/post/2020-09-28-%E5%9F%BA%E4%BA%8Ecaldav%E4%B8%8Ecarddav%E5%8D%8F%E8%AE%AE%E7%9A%84radicale%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Mon, 28 Sep 2020 11:56:34 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/post/2020-09-28-%E5%9F%BA%E4%BA%8Ecaldav%E4%B8%8Ecarddav%E5%8D%8F%E8%AE%AE%E7%9A%84radicale%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</guid>
+      <description>前言 为了在不同设备上同步日历，有过几种不同的尝试。以前电脑使用Windows系统，用Microsoft Office Outlook自带的Exchange</description>
+    </item>
+    
+    <item>
       <title>screen的使用</title>
       <link>https://kawaitomato.github.io/post/2020-07-29-screen%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 29 Jul 2020 12:23:51 +0800</pubDate>

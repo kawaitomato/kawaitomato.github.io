@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://kawaitomato.github.io/post/2020-09-28-%E5%9F%BA%E4%BA%8Ecaldav%E4%B8%8Ecarddav%E5%8D%8F%E8%AE%AE%E7%9A%84radicale%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kawaitomato.github.io/post/2020-07-29-screen%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2020-07-29T15:51:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,6 +80,20 @@
   </url>
   
   <url>
+    <loc>https://kawaitomato.github.io/tags/caldav/</loc>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kawaitomato.github.io/tags/carddav/</loc>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kawaitomato.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -101,7 +122,14 @@
   
   <url>
     <loc>https://kawaitomato.github.io/post/</loc>
-    <lastmod>2020-07-29T15:51:43+08:00</lastmod>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kawaitomato.github.io/tags/radicale/</loc>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -115,7 +143,7 @@
   
   <url>
     <loc>https://kawaitomato.github.io/tags/</loc>
-    <lastmod>2020-07-25T23:18:08+08:00</lastmod>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -226,6 +254,13 @@
   </url>
   
   <url>
+    <loc>https://kawaitomato.github.io/tags/%E5%90%8C%E6%AD%A5/</loc>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kawaitomato.github.io/tags/%E5%90%8D%E8%A8%80/</loc>
     <lastmod>2020-07-06T23:32:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -276,7 +311,7 @@
   
   <url>
     <loc>https://kawaitomato.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
-    <lastmod>2020-07-29T15:51:43+08:00</lastmod>
+    <lastmod>2020-09-28T11:56:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

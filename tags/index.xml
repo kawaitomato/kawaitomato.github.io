@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Tomato&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Jul 2020 23:18:08 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2020 11:56:34 +0800</lastBuildDate>
     
 	<atom:link href="https://kawaitomato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CalDAV</title>
+      <link>https://kawaitomato.github.io/tags/caldav/</link>
+      <pubDate>Mon, 28 Sep 2020 11:56:34 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/tags/caldav/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CardDAV</title>
+      <link>https://kawaitomato.github.io/tags/carddav/</link>
+      <pubDate>Mon, 28 Sep 2020 11:56:34 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/tags/carddav/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fedora</title>
@@ -35,6 +53,15 @@
       <pubDate>Sun, 26 Jul 2020 15:10:39 +0800</pubDate>
       
       <guid>https://kawaitomato.github.io/tags/opentracker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Radicale</title>
+      <link>https://kawaitomato.github.io/tags/radicale/</link>
+      <pubDate>Mon, 28 Sep 2020 11:56:34 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/tags/radicale/</guid>
       <description></description>
     </item>
     
@@ -161,6 +188,15 @@
       <pubDate>Sat, 25 Jul 2020 23:18:08 +0800</pubDate>
       
       <guid>https://kawaitomato.github.io/tags/%E5%8D%87%E7%BA%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>同步</title>
+      <link>https://kawaitomato.github.io/tags/%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Mon, 28 Sep 2020 11:56:34 +0800</pubDate>
+      
+      <guid>https://kawaitomato.github.io/tags/%E5%90%8C%E6%AD%A5/</guid>
       <description></description>
     </item>
     
